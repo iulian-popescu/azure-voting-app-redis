@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: iulianpopescuazurevotingappredis 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iulianpopescuazurevotingappredis
+  template:
+    metadata:
+      labels:
+        app: iulianpopescuazurevotingappredis 
+    spec:
+      containers:
+        - name: iulianpopescuazurevotingappredis 
+          image: trainingbittnet.azurecr.io/iulianpopescuazurevotingappredis
+          ports:
+          - containerPort: 80
